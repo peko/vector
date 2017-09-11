@@ -29,7 +29,7 @@ _init() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
     glfwWindowHint(GLFW_FLOATING, GLFW_TRUE);
 
-    win = glfwCreateWindow(800, 800, "DIG", NULL, NULL);
+    win = glfwCreateWindow(800, 800, "vector", NULL, NULL);
     if (!win) {
         glfwTerminate();
         exit(EXIT_FAILURE);
@@ -76,7 +76,6 @@ on_error(int error, const char* description) {
 
 static void
 on_key(GLFWwindow* win, int key, int scancode, int action, int mods) {
-
     // if(*scene.on_key != NULL) {
     //     scene.on_key(key, scancode, action, mods);
     // }
@@ -115,4 +114,10 @@ glfw_i glfw = {
     .free = _free,
     .init = _init,
     .loop = _loop,
+
+    .on_error        = NULL,
+    .on_key          = NULL,
+    .on_mouse_move   = NULL,
+    .on_mouse_button = NULL,
+    .on_scroll       = NULL
 };

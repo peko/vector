@@ -20,6 +20,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wall -g")
 
 # Include dirs
 include_directories(
+  src/
   src/int/
   dep/linmath
   dep/glad
@@ -29,6 +30,7 @@ include_directories(
 
 set(VECTOR_FILES
   dep/glad/glad.c
+  src/vector.c
   src/glfw.c
   src/scene_hexagons.c
   src/render_wire.c

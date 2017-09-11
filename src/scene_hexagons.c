@@ -1,7 +1,6 @@
 #include <math.h>
 
 #include "scene_i.h"
-
 #include "kvec.h"
 
   //////////////
@@ -50,7 +49,6 @@ _init(GLFWwindow* window) {
     // free parts
     for(int i=0; i<10; i++ ) kv_destroy(parts.a[i]);
     kv_destroy(parts);
-    
 };
 
 static void 
@@ -69,7 +67,7 @@ _free() {
 // Interactive handlers
 static void on_key (int key, int scancode, int action, int mods){
     
-    // printf("a: %d k: %d\n", action, key);
+    printf("a: %d k: %d\n", action, key);
     
     float step = 0.1;
     if(action > 0)
