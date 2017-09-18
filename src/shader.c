@@ -14,16 +14,16 @@ static char* load_file(char* filename);
 static void shader_check(GLuint ref);
 static void program_check(GLuint ref);
 
-shader_t 
+shader_p 
 shader_new() {
-    shader_t shader = calloc(1,sizeof(shader_t));
+    shader_p shader = calloc(1,sizeof(shader_p));
     return shader;
 }
 
-shader_t
+shader_p
 shader_load(char* shadername) {
 
-    shader_t shader = shader_new();
+    shader_p shader = shader_new();
 
     char filename[256];
     
@@ -121,13 +121,13 @@ static void program_check(GLuint ref) {
     }
 }
 
-void shader_free(shader_t shader) {
+void shader_free(shader_p shader) {
     // delete program from vm
     glDeleteProgram(shader->prog_ref);
     free(shader);
 }
 
-void shader_set(shader_t shader, const GLfloat* mvp, const GLfloat* col) {
+void shader_set(shader_p shader, const GLfloat* mvp, const GLfloat* col) {
 
     // SET ATTRIBUTES
     glEnableVertexAttribArray(shader->pos_loc);
@@ -145,7 +145,7 @@ void shader_set(shader_t shader, const GLfloat* mvp, const GLfloat* col) {
     glUniform3fv      (shader->col_loc, 1, (const GLfloat*) col);
 }
 
-void shader_unset(shader_t shader) {
+void shader_unset(shader_p shader) {
     // UNSET SHADER
     glUseProgram(0);
     // UNSET ATTRIBUTES

@@ -5,14 +5,14 @@
 
 #include "vbo.h"
 
-vbo_t*
+vbo_p
 vbo_new() {
-    vbo_t* vbo = calloc(1, sizeof(vbo_t));
+    vbo_p vbo = calloc(1, sizeof(vbo_t));
     return vbo;
 }
 
 void
-vbo_fill(vbo_t* vbo, parts_v* parts) {
+vbo_fill(vbo_p vbo, parts_v* parts) {
 
     vbo->parts = (uint32_t*) calloc(parts->n, sizeof(uint32_t));
 
@@ -44,7 +44,7 @@ vbo_fill(vbo_t* vbo, parts_v* parts) {
 }
 
 void
-vbo_free(vbo_t* vbo) {
+vbo_free(vbo_p vbo) {
     // clean up VRAM
     glDeleteBuffers(1, &vbo->id);
     // clean heap

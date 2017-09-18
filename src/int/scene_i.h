@@ -6,8 +6,8 @@
 
 typedef struct {
 
-    vbo_t** vbo;
-    cam_t** cam;
+    vbo_p* vbo;
+    cam_p* cam;
 
     // interaface
     void (*init  )(GLFWwindow* window);

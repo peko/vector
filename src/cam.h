@@ -6,3 +6,4 @@ typedef struct {
     float s; // scale
     float r; // ratio
 } cam_t;
+typedef cam_t* cam_p;

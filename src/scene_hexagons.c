@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 
 #include "scene_i.h"
 #include "kvec.h"
@@ -7,8 +8,8 @@
  /// STATIC ///
 //////////////
 
-static vbo_t* vbo;
-static cam_t* cam;
+static vbo_p vbo;
+static cam_p cam;
 static cam_t _cam = {
     .x = 0.0,
     .y = 0.0,

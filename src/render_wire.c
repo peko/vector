@@ -10,7 +10,7 @@
  /// STATIC ///
 //////////////
 
-static shader_t shader;
+static shader_p shader;
 static void 
 _init() {
     shader = shader_load("wire_shader");
@@ -20,8 +20,8 @@ _init() {
 static void 
 _draw(scene_i* scene) {
 
-    cam_t* cam = *(scene->cam);
-    vbo_t* vbo = *(scene->vbo);
+    cam_p cam = *(scene->cam);
+    vbo_p vbo = *(scene->vbo);
 
     bool loop = true;
     vec3 col = {1.0, 1.0, 1.0};
