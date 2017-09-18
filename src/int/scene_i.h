@@ -22,3 +22,5 @@ typedef struct {
     void (*on_mouse_button) (int button, int action, int mods);
 
 } scene_i;
+
+typedef scene_i* scene_p;
