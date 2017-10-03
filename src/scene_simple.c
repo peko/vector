@@ -1,4 +1,4 @@
-#include "scene.h"
+#include "int/scene_i.h"
 
 static vbo_t* vbo = NULL;
 

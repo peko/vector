@@ -4,7 +4,7 @@
 #include "int/render_i.h"
 
 #include "vector.h"
-#include "scene.h"
+#include "int/scene_i.h"
 
 extern glfw_i   glfw;
 extern render_i render_wire;
